@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: "./test project depi"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_TRACKING_INSECURE_TLS=true
+
+  frontend:
+    build: 
+      context: "./FaceProtect"
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow
+    container_name: mlflow_ui
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    environment:
+      - MLFLOW_FLASK_SERVER_SECRET_KEY=somekey
+    command: mlflow server --host 0.0.0.0 --port 5000 --serve-artifacts --allowed-hosts '*'

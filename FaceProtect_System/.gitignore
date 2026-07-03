@@ -1,0 +1,16 @@
+# Virtual Environments
+.venv/
+faceprotect_env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Databases and Logs
+mlflow.db
+mlruns/
+*.log
+
+# Compressed Files
+*.zip

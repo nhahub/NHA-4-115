@@ -1,0 +1,17 @@
+torch>=2.0.0
+torchvision>=0.15.0
+facenet-pytorch>=2.5.3
+deepface>=0.0.79
+insightface>=0.7.3
+# NOTE: Disabled due to Py3.13 / wheel availability issues during setup.
+# If you need it, install a compatible numpy/insightface combination and remove the comment above.
+
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.2.0
+matplotlib>=3.7.0
+opencv-python>=4.7.0
+pyyaml>=6.0
+tqdm>=4.65.0
+faiss-cpu>=1.8.0
+

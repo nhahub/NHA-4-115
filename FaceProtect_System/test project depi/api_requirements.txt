@@ -1,0 +1,20 @@
+# ─── FastAPI Core ───────────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9      # required for UploadFile / Form data
+pydantic>=2.0.0
+
+# ─── Image Processing ───────────────────────────────────────────────────────
+opencv-python-headless>=4.7.0         # face detection + blur / pixelation / redact
+tf-keras>=2.14.0                     # ArcFace / VGG-Face embeddings (TensorFlow backend)
+# ─── Already in project requirements.txt (listed here for clarity) ──────────
+numpy>=1.24.0
+pandas>=2.0.0
+faiss-cpu>=1.8.0
+deepface>=0.0.79             # ArcFace / VGG-Face embeddings
+torch>=2.0.0
+torchvision>=0.15.0
+facenet-pytorch>=2.5.3
+pyyaml>=6.0
+tf-keras 
+mlflow

@@ -1,0 +1,29 @@
+pipeline:
+  input_data_dir: "augmented_faces"
+  temp_dir: "temp"
+
+models:
+  selected_model: "arcface" # Options: facenet, arcface, deepface
+
+  device: "auto" # Options: auto, cuda, cpu
+  batch_size: 32
+
+embeddings:
+  output_dir: "outputs/embeddings"
+  normalize: true
+
+# Vector search (FAISS)
+faiss:
+  enabled: true
+  index_dir: "outputs/embeddings/faiss_index"
+  top_k: 5
+
+evaluation:
+  output_reports_dir: "outputs/reports"
+  output_plots_dir: "outputs/plots"
+  distance_metric: "cosine" # Options: cosine, euclidean
+  test_split_ratio: 0.2 # 20% of pairs used for testing threshold
+
+logging:
+  log_level: "INFO"
+  log_dir: "outputs/logs"
